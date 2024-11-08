@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <style>
+        /* Resetando margens e padding para uma aparência mais consistente */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Estilo para o body com fundo em degradê */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #000000, #9b4d96); /* Degradê de preto para lilás */
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Estilo para o título principal */
+        h1 {
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Estilo para a mensagem */
+        p {
+            font-size: 1rem;
+            color: #ddd; /* Texto mais suave */
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        /* Estilo para o formulário */
+        form {
+            background-color: rgba(255, 255, 255, 0.1); /* Fundo semi-transparente para contrastar com o degradê */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* Estilo para os campos de entrada */
+        label {
+            font-size: 1rem;
+            color: #fff; /* Labels em branco para contraste */
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+            transition: border-color 0.3s ease;
+            background-color: rgba(255, 255, 255, 0.2); /* Fundo dos campos com opacidade para dar o efeito de transparência */
+            color: #fff;
+        }
+
+        input[type="text"]:focus {
+            border-color: #9b4d96; /* Cor lilás para foco */
+        }
+
+        /* Estilo para o botão */
+        button {
+            padding: 12px;
+            font-size: 1.1rem;
+            background-color: #9b4d96; /* Cor lilás para o botão */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #7a3c7d; /* Cor mais escura para o hover */
+        }
+
+        /* Estilo responsivo */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 0.9rem;
+            }
+
+            button {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>{{message}}</h1>
+    <p>Esta é a página inicial renderizada com Handlebars e Rocket!</p>
+
+    <!-- Formulário para inserir nome e sobrenome -->
+    <form action="/submit" method="post">
+        <label for="first_name">Nome:</label>
+        <input type="text" id="first_name" name="first_name" required>
+        <br>
+        <label for="last_name">Sobrenome:</label>
+        <input type="text" id="last_name" name="last_name" required>
+        <br>
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <style>
+        /* Resetando margens e padding para uma aparência mais consistente */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Estilo para o body com fundo em degradê */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #000000, #9b4d96); /* Degradê de preto para lilás */
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Estilo para o título principal */
+        h1 {
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Estilo para o parágrafo */
+        p {
+            font-size: 1rem;
+            color: #ddd; /* Texto mais suave */
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        /* Estilo para a lista de músicas */
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 30px;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        li {
+            font-size: 1.1rem;
+            color: #ddd;
+            text-align: center;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.1); /* Fundo semi-transparente */
+            margin: 5px 0;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        li:hover {
+            background-color: rgba(255, 255, 255, 0.2); /* Efeito de hover nas músicas */
+        }
+
+        /* Estilo para os links */
+        a {
+            font-size: 1.1rem;
+            color: #9b4d96; /* Cor lilás para links */
+            text-decoration: none;
+            margin-top: 20px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        a:hover {
+            color: #7a3c7d; /* Cor mais escura para hover */
+            transform: scale(1.05); /* Efeito de aumento ao passar o mouse */
+        }
+
+        /* Estilo responsivo */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 0.9rem;
+            }
+
+            li {
+                font-size: 1rem;
+            }
+
+            a {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>{{title}}</h1>
+    <p>Aqui está a lista das minhas músicas favoritas:</p>
+    <ul>
+        {{#each songs}}
+            <li>{{this}}</li>
+        {{/each}}
+    </ul>
+    <a href="/">Voltar à página inicial</a>
+</body>
+</html>
